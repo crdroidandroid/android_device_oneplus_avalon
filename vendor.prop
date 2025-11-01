@@ -1,5 +1,8 @@
 # Bluetooth
 bluetooth.device.default_name=OnePlus Nord 4
 
+# Device name
+ro.product.marketname=OnePlus Nord 4
+
 # USB
 vendor.usb.product_string=OnePlus Nord 4
