@@ -63,3 +63,12 @@ $(call inherit-product, device/oneplus/sm8650-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/avalon/avalon-vendor.mk)
+
+#UDFPS Customization
+TARGET_HAS_UDFPS := true
+
+#Sign it
+-include vendor/lineage-priv/keys/keys.mk
+
+# Blur
+TARGET_ENABLE_BLUR := true
