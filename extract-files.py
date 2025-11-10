@@ -9,7 +9,6 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 from extract_utils.fixups_lib import (
-    lib_fixup_remove,
     lib_fixups,
     lib_fixups_user_type,
 )
@@ -25,21 +24,12 @@ namespace_imports = [
     'vendor/qcom/opensource/commonsys-intf/display',
 ]
 
-def lib_fixup_all_suffixes(lib: str, partition: str, *args, **kwargs):
-    if partition == 'odm':
-        return f'{lib}_odm'
-    if partition == 'vendor':
-        return f'{lib}_vendor'
-    return lib
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
-    (
-        'vendor.oplus.hardware.displaypanelfeature-V1-ndk',
-    ): lib_fixup_all_suffixes,
     (
         'com.qti.sensor.s5k3p9',
         'libhwconfigurationutil',
